@@ -141,7 +141,7 @@ public class FlightSearchTest {
     @Test
     public void testNegativeChildren() {
         boolean result = flightSearch.runFlightSearch("01/12/2025", "syd", false,
-                "05/12/2025", "mel", "economy", 2, -1, 0);
+                "05/12/2025", "mel", "economy", 10, -1, 0);
         assertFalse(result);
         // Fields remain unchanged (null)
         assertNull(flightSearch.getDepartureDate());
@@ -151,7 +151,7 @@ public class FlightSearchTest {
     @Test
     public void testNegativeInfants() {
         boolean result = flightSearch.runFlightSearch("01/12/2025", "syd", false,
-                "05/12/2025", "mel", "economy", 2, 0, -1);
+                "05/12/2025", "mel", "economy", 10, 0, -1);
         assertFalse(result);
         // Fields remain unchanged (null)
         assertNull(flightSearch.getDepartureDate());

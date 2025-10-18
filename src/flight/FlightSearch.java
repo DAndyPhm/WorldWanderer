@@ -29,6 +29,8 @@ public class FlightSearch {
         // Condition 1: Total passengers between 1 and 9
         int totalPassengers = adultPassengerCount + childPassengerCount + infantPassengerCount;
         if (totalPassengers < 1 || totalPassengers > 9) return false;
+        // Condition 1a: No negative passenger counts        
+        if (childPassengerCount < 0 || infantPassengerCount < 0) return false;
 
         // Condition 2: Children cannot sit in emergency row or first class
         if ((childPassengerCount > 0) && (emergencyRowSeating || seatingClass.equals("first"))) return false;
